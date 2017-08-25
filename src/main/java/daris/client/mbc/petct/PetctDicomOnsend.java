@@ -236,8 +236,4 @@ public class PetctDicomOnsend implements Runnable {
         System.out.println("done.");
     }
 
-    public static void main(String[] args) {
-        System.out.println("a= ".split("=").length);
-    }
-
 }
