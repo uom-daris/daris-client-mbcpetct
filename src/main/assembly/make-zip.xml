@@ -11,19 +11,19 @@
 		<file>
 			<source>${project.build.directory}/${project.artifactId}-${project.version}-jar-with-dependencies.jar</source>
 			<outputDirectory>${project.artifactId}-${project.version}</outputDirectory>
-			<destName>daris-mbcpetct-dicom-onsend.jar</destName>
+			<destName>daris-client-mbcpetct.jar</destName>
 		</file>
 	</files>
 	<fileSets>
 		<fileSet>
 			<fileMode>0755</fileMode>
 			<directory>src/main/bash</directory>
-			<outputDirectory>daris-mbcpetct-dicom-onsend-${project.version}</outputDirectory>
+			<outputDirectory>daris-client-mbcpetct-${project.version}</outputDirectory>
 		</fileSet>
 		<fileSet>
 			<fileMode>0755</fileMode>
 			<directory>src/main/windows</directory>
-			<outputDirectory>daris-mbcpetct-dicom-onsend-${project.version}</outputDirectory>
+			<outputDirectory>daris-client-mbcpetct-${project.version}</outputDirectory>
 		</fileSet>
 	</fileSets>
 </assembly>

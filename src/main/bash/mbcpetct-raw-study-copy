@@ -5,4 +5,4 @@
 JAR=$(dirname $0)/daris-client-mbcpetct.jar
 [[ ! -f $JAR ]] && echo "${JAR} is not found." >&2 && exit 2
 
-java -cp $JAR daris.client.mbc.petct.PetctDicomOnsendCLI ${1+"$@"}
+java -cp $JAR daris.client.mbc.petct.PetctRawStudyCopyCLI ${1+"$@"}

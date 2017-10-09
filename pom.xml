@@ -3,12 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>au.edu.unimelb.daris</groupId>
-	<artifactId>daris-mbcpetct-dicom-onsend</artifactId>
+	<artifactId>daris-client-mbcpetct</artifactId>
 	<version>0.0.2</version>
 	<packaging>jar</packaging>
 	<name>daris-mbcpetct-dicom-onsend</name>
-	<url>https://github.com/uom-daris/daris-mbcpetct-dicom-onsend</url>
-	<description>DaRIS client to call the daris.dicom.send service to send DaRIS data to specified DICOM server.</description>
+	<url>https://github.com/uom-daris/daris-client-mbcpetct</url>
+	<description>DaRIS client for MBC PET/CT facility.</description>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -67,7 +67,7 @@
 						</goals>
 						<configuration>
 							<appendAssemblyId>false</appendAssemblyId>
-							<finalName>daris-mbcpetct-dicom-onsend-${project.version}</finalName>
+							<finalName>daris-client-mbcpetct-${project.version}</finalName>
 							<descriptors>
 								<descriptor>src/main/assembly/make-zip.xml</descriptor>
 							</descriptors>
