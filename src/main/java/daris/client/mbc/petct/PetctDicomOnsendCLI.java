@@ -113,7 +113,7 @@ public class PetctDicomOnsendCLI {
 					 */
 					// Update FMP
 					if (patientID!=null && (date!=null || visitID!=null)) {
-						System.out.println("Accession FMP");
+						System.out.println("Accessing FMP");
 						String home = System.getProperty("user.home");
 						MBCFMP mbc = new MBCFMP(home+FMP_CRED_REL_PATH);
 						String fieldValue = "Sent DICOM host " + settings.calledAETitle() + "@" + settings.calledAEHost() + 
@@ -124,9 +124,11 @@ public class PetctDicomOnsendCLI {
 						mbc.updateStringInVisit(patientID, date, visitID,  fieldName, fieldValue, visitType, false);
 						mbc.closeConnection();
 						System.out.println("Successfully updated FMP");
+					} else {
+						System.out.println("Did not update FMP - could not extract Ptaient ID, Date Acquisition and/or Visit ID from the data");
 					}
 				} catch (Throwable t) {
-					System.out.println("Failed to update FileMakerPro DataBase with the number of sent DataSets : " + t.getMessage());
+					System.out.println("Error updating FileMakerPro DataBase with the number of sent DataSets : " + t.getMessage());
 				}	
 			}
 
