@@ -14,7 +14,7 @@ import daris.client.MFSession;
 public class PetctDicomOnsend implements Runnable {
 
     public static interface ResultHandler {
-        void processed(int nbDatasetsSent, int totalDatasets);
+        void processed(MFSession session, int nbDatasetsSent, int totalDatasets);
     }
 
     public static final String APP = "mbcpetct-dicom-onsend";
@@ -198,8 +198,9 @@ public class PetctDicomOnsend implements Runnable {
             e.printStackTrace(System.err);
         } finally {
             if (_rh != null) {
-                _rh.processed(nbDatasetsSent, totalDatasets);
+                _rh.processed(_session, nbDatasetsSent, totalDatasets);
             }
+            _session.discard();
         }
 
     }
