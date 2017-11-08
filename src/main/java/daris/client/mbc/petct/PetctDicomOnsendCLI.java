@@ -4,14 +4,13 @@ import java.util.Date;
 
 import arc.xml.XmlDoc;
 import arc.xml.XmlStringWriter;
-import arc.xml.XmlWriter;
 import nig.mf.pssd.CiteableIdUtil;
 import daris.client.MFSession;
 import mbciu.mbc.MBCFMP;
 
 public class PetctDicomOnsendCLI {
 	// Credential path for access FileMAkerPro data base
-	private static final String FMP_CRED_REL_PATH = "/.fmp/mbc_migrate";
+	private static final String FMP_CRED_REL_PATH = "/.fmp/petct_fmpcheck";
 
 	public static void main(String[] args) throws Throwable {
 
