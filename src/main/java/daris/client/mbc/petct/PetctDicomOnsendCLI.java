@@ -10,7 +10,7 @@ import mbciu.mbc.MBCFMP;
 
 public class PetctDicomOnsendCLI {
 	// Credential path for access FileMAkerPro data base
-	private static final String FMP_CRED_REL_PATH = "/.fmp/petct_fmpcheck";
+	private static final String FMP_CRED_REL_PATH = "/.fmp/mbciu_fmp";
 
 	public static void main(String[] args) throws Throwable {
 
@@ -196,7 +196,7 @@ public class PetctDicomOnsendCLI {
 		System.out.println("    "+ PetctDicomOnsend.APP + " [options]");
 		System.out.println();
 		System.out.println("DESCRIPTION:");
-		System.out.println("    " + PetctDicomOnsend.APP + " is client application to select DICOM dataset in the specified study and send them to remote DICOM server.");
+		System.out.println("    " + PetctDicomOnsend.APP + " is client application to select DICOM dataset in the specified study and send them to remote DICOM server. It also writes back the status of the transfers into the MBC's FileMakerPro.");
 		System.out.println();
 		System.out.println("OPTIONS:");
 		System.out.println("    --help                               Display help information.");
