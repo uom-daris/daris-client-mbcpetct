@@ -139,7 +139,8 @@ public class PetctDicom2NiftiDownload implements Runnable {
                     transcode(cide.value(), cide.value("@id"));
                 }
             }
-            complete = re.booleanValue("total/@complete");
+            idx += DEFAULT_PAGE_SIZE;
+            complete = re.booleanValue("cursor/total/@complete");
         } while (!complete);
     }
 
@@ -180,9 +181,15 @@ public class PetctDicom2NiftiDownload implements Runnable {
                                     fname = outputFileNamePrefix + i + ".nii";
                                 } else if (e.name().toLowerCase().endsWith(".nii.gz")) {
                                     fname = outputFileNamePrefix + i + ".nii.gz";
+                                } else {
+                                    fname = outputFileNamePrefix + e.name();
                                 }
                                 if (fname != null) {
-                                    StreamCopy.copy(e.stream(), new File(_settings.dstDir(), fname));
+                                    File f = new File(_settings.dstDir(), fname);
+                                    System.out.print("Downloading '" + f.getAbsolutePath() + "' ...");
+                                    StreamCopy.copy(e.stream(), f);
+                                    System.out.println("done.");
+                                    i++;
                                 }
                             }
                         } finally {
