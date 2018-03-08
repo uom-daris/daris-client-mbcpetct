@@ -264,7 +264,7 @@ public class PetctDicomSftpSend implements Runnable {
             w.add("directory", _settings.sshDirectory());
         }
         w.add("user", _settings.sshUser());
-        w.add("password", _settings.password());
+        w.add("password", _settings.sshPassword());
         Map<String, String> elementValues = _settings.elementValues();
         if (elementValues != null && !elementValues.isEmpty()) {
             w.push("override");
