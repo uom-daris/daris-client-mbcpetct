@@ -25,7 +25,7 @@ public class PetctDicomSftpSend implements Runnable {
         private Set<String> _datasetNames;
         private Map<String, String> _elementValues;
         private String _sshHost;
-        private int _sshPort;
+        private int _sshPort = 22;
         private String _sshUser;
         private String _sshPassword;
         private String _sshDir;
@@ -162,7 +162,7 @@ public class PetctDicomSftpSend implements Runnable {
             if (_sshHost == null) {
                 throw new IllegalArgumentException("Missing SFTP server host");
             }
-            if (_sshPort == 0 || _sshPort > 65535) {
+            if (_sshPort <= 0 || _sshPort > 65535) {
                 throw new IllegalArgumentException("Invalid SFTP server port: " + _sshPort);
             }
             if (_sshUser == null) {
