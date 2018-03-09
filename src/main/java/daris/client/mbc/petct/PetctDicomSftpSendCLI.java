@@ -135,6 +135,7 @@ public class PetctDicomSftpSendCLI {
                                 "Did not update FMP - could not extract Ptaient ID, Date Acquisition and/or Visit ID from the data");
                     }
                 } catch (Throwable t) {
+                    t.printStackTrace();
                     System.out.println("Error updating FileMakerPro DataBase with the number of sent DataSets : "
                             + t.getMessage());
                 }

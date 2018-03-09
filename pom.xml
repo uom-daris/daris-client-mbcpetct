@@ -4,7 +4,7 @@
 
 	<groupId>au.edu.unimelb.daris</groupId>
 	<artifactId>daris-client-mbcpetct</artifactId>
-	<version>0.0.7</version>
+	<version>0.0.8</version>
 	<packaging>jar</packaging>
 	<name>daris-mbcpetct-dicom-onsend</name>
 	<url>https://github.com/uom-daris/daris-client-mbcpetct</url>
